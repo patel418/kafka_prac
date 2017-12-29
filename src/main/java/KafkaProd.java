@@ -23,7 +23,7 @@ public class KafkaProd {
         Producer <String, String> producer = new org.apache.kafka.clients.producer.KafkaProducer<String, String>(properties); //the object that sends the producer records
 
         ProducerRecord <String, String> producerR = new ProducerRecord<String, String>("topic1","3", "message test"); //this is actually what is being sent. the topic
-        //producer record is (topic, key, value);
+        //producer record is (topic, key, value); If key is the same, it will go to the same partition.
 
         producer.send(producerR);
         producer.close(); //need to close connection

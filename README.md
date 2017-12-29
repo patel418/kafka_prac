@@ -19,7 +19,7 @@ docker run --rm -it \
 docker run --rm -it --net=host landoop/fast-data-dev bash
 
 #CLI-producer create, delete, describe, list
-##create
+# create
 
 kafka-topics --zookeeper 127.0.0.1:2181 --create --topic topic1 --partitions 3 --replication-factor 1 
 
@@ -27,19 +27,19 @@ kafka-topics --zookeeper 127.0.0.1:2181 --create --topic topic1 --partitions 3 -
 
 #Also needs to mention zookeeper because it handles leadership and manages kafka
 
-##list
+# list
 
 kafka-topics --zookeeper 127.0.0.1:2181 --list
 
-#lists all topics
+##lists all topics
 
-##delete
+# delete
 
 kafka-topics --zookeeper 127.0.0.1:2181 --topic first_topic --delete
 
 #deletes topic only if delete.topic.enable is set to true.
 
-##describe
+# describe
 
 kafka-topics --zookeeper 127.0.0.1:2181 --topic topic1 --describe
 
